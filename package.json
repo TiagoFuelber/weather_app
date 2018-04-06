@@ -12,7 +12,6 @@
     "build:umd:min": "./node_modules/.bin/webpack --output-filename main.umd.min.js -p",
     "build:all": "npm run clear-build && npm run build:umd && npm run build:umd:min",
     "lint": "./node_modules/.bin/eslint src/*.js",
-    "prepush": "npm run lint --no-verify",
     "test": "./node_modules/.bin/mocha tests/**/*.spec.js --require babel-register",
     "test:tdd": "./node_modules/.bin/mocha tests/**/*.spec.js --require babel-register --watch",
     "test:coverage": "nyc npm test"
