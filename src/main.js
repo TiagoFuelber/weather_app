@@ -1,93 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Local Weather</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
-	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/>
-	<link rel="stylesheet" href="http://static.tumblr.com/dpm5r31/6YUog4dff/weather_icons.css"/>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>	
-<style>
-    @import url('https://fonts.googleapis.com/css?family=Patua+One');
-	body {
-	    background-position: right;
-    background-repeat: no-repeat;
-    background-size: cover;
-	}
-	
-	.well {
-	   background-color:rgba(0, 0, 0, .2);
-	   border: none;
-	   height: auto;
-	   margin: 1em auto;
-	}
-	h1 {
-	    font-family: 'Patua One', cursive;
-	    color: white;
-	}
-	#app {
-	    font-weight: bold;
-	    color: white;
-	    font-size: 1.7em;
-	}
-	#footer {
-	    position:fixed;
-	    bottom: 0;
-	    width: 100%;
-	    right: auto;
-	    left: auto;
-	    text-align: center;
-        font-weight: bold;
-        background-color: black;
-        padding: 1em;
-	    color:white;
-	}
-</style>
-
-</head>
-
-<body>
-<div class="container-fluid">
-<h1 class="text-center">Weather APP</h1>
-
-  <div id="search_city" class="text-center">
-<form id ="form" class="form-group form-inline">
-
-<label class="form-inline"><input id="inputCity" class="form-control" type="text" name="userCity" placeholder="Type your city"></label>
-<label id="submit" class="form-inline"><input class="btn btn-primary" type="submit" value="submit"></label>
-
-</form>
-</div>
-
-<!--BOX CONTENT-->
-<div id="app" class="text-center">
-<div class="well">
-<p id="city"></p>
-<p data-degree="celsius" id="temp"></p>
-<button id="switchBtn" type="button" class="btn btn-default">Switch celsius/fahrenheit</button>
-</br></br>
-<p id='description'></p>
-<!-- weather Icon -->
-<img id="weather-icon"/>
-</div>
-</div>
-</div>
-
-	
-	
-</div>
-<!--RODAPÉ-->
-	<div id="footer" class="center-block">
-		<p>Coded by <a href="https://tiagofuelber.tumblr.com" target="_blank">Tiago</a></p>
-	</div><script>
-        "use strict"
+console.log('entrou aqui');
 
 var apiLink = "https://api.apixu.com/v1/current.json?key=d0f7e0df0b704466a40162720160911&q=",
     form = $('#form'),
     obj;
 
-  
+
 // declares the variables with the background images
 var sunpic = "url('http://static.tumblr.com/dpm5r31/NS3og39pj/suny_day.jpeg')";
 var thunderpic = "url('http://static.tumblr.com/dpm5r31/6U5ogftat/trovoada.jpg')";
@@ -96,7 +13,7 @@ var cloudypic = "url('http://static.tumblr.com/dpm5r31/zJwogfta3/nublado.jpg')";
 var snowpic = "url('http://static.tumblr.com/dpm5r31/wSyogft9q/neve.jpg')";
 var rainpic = "url('http://static.tumblr.com/dpm5r31/abGogft9c/chuva.jpg')";
 var clearpic = "url('http://static.tumblr.com/dpm5r31/W0Rogft8y/ceu-limpo.jpg')";
-  
+
 function background() {
     switch (obj.current.condition.code) {
       case 1000:
@@ -125,11 +42,11 @@ function background() {
   }
 
 function apiUrl(position) {
-    var apiCall = apiLink + position.coords.latitude + "," + position.coords.longitude; 
-  // requests the JSON from the API  
+    var apiCall = apiLink + position.coords.latitude + "," + position.coords.longitude;
+  // requests the JSON from the API
   $.getJSON(apiCall, function(json) {
        obj = JSON.stringify(json);
-       obj = JSON.parse(obj); 
+       obj = JSON.parse(obj);
        showContent();
        });
 }
@@ -140,7 +57,7 @@ function showContent() {
   $('#temp').html(obj.current.temp_c + "°C");
   $('#description').html(obj.current.condition.text);
   $('#weather-icon').attr("src", obj.current.condition.icon);
-  background(); 
+  background();
 }
 // gets the user coordinates and stores in apiCall
     if (navigator.geolocation) {
@@ -154,7 +71,7 @@ form.on('submit', function (e) {
   var x = apiLink + $('#inputCity').val();
   $.getJSON(x, function(json) {
        obj = JSON.stringify(json);
-       obj = JSON.parse(obj); 
+       obj = JSON.parse(obj);
        //$('#city').html(obj);
        showContent();
        });
@@ -168,11 +85,6 @@ $(document).ready(function() {
     } else if ($('#temp').attr('data-degree') === "fahrenheit") {
       $('#temp').html(obj.current.temp_c + "°C");
       $('#temp').attr('data-degree', "celsius");
-    } 
-  }); 
+    }
+  });
 });
-
-</script>
-    
-</body>
-</html>

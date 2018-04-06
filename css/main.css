@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css?family=Patua+One');
+
+/* {{BASE}} */
+body {
+  font-size: 14px;
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* {{REM CONFIGURATION}} */
+html {font-size: 62.5%;}
+
+@media screen and (max-width: 1024px) {
+	html {font-size: 55%;}
+}
+
+@media screen and (max-width: 940px) {
+	html {font-size: 50%;}
+}
+
+@media screen and (max-width: 768px) {
+    html {font-size: 45%;}
+}
+
+/* {{TYPOGRAPHY}} */
+h1, h2, h3, h4, h5, h6, p, a {
+  font-family: 'Lato';
+}
+
+.white {
+  color: #FFF;
+}
+
+.title {
+  font-family: 'Patua One', cursive;
+  font-size: 7rem;
+  color: white;
+}
+
+/* {{CONTAINER}} */
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  width: 100%;
+  max-width: 1230px;
+  margin: 0 auto;
+}
+
+/* {{UTILS}} */
+.text-center {
+  text-align: center;
+}
+
+/* {{FORM}} */
+.form-input {
+  font-size: 14px;
+  font-family: 'Lato';
+  padding: 15px;
+  border: none;
+}
+
+/* {{BUTTONS}} */
+.btn {
+  font-size: 14px;
+  font-family: 'Lato';
+  text-transform: uppercase;
+  padding: 15px;
+  border: none;
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+
+.btn-blue {
+  color: #FFF;
+  background: #00A1FF;
+}
+
+.btn-grey {
+  color: #FFF;
+  background: #949393;
+}
+
+.main {
+  min-height: 100vh;
+}
+
+.box-display {
+  font-weight: bold;
+  color: white;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  margin-top: 5rem;
+  margin-bottom: 8rem;
+  background-color: rgba(0, 0, 0, .2);
+}
+
+.footer {
+  color:white;
+  text-align: center;
+  font-weight: bold;
+  background-color: black;
+  padding: 1em;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}

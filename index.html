@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Local Weather</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+  <link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/>
+  <link rel="stylesheet" href="http://static.tumblr.com/dpm5r31/6YUog4dff/weather_icons.css"/>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+  <main class="container main">
+
+    <h1 class="title text-center">Weather APP</h1>
+
+    <div id="search_city" class="text-center">
+      <form id="form" class="form-group form-inline">
+        <label class="form-inline" hidden>Type your city</label>
+        <input id="inputCity" class="form-input" type="search" name="userCity" placeholder="Type your city">
+        <label id="submit" class="form-inline">
+          <input class="btn btn-blue" type="submit" value="submit">
+        </label>
+      </form>
+    </div>
+
+    <div class="box-display text-center">
+      <p id="city"></p>
+      <p data-degree="celsius" id="temp"></p>
+      <button id="switchBtn" type="button" class="btn btn-grey">Switch celsius/fahrenheit</button>
+      </br></br>
+      <p id="description"></p>
+      <!-- weather Icon -->
+      <img id="weather-icon"/>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p class="white">Coded by <a href="https://github.com/TiagoFuelber" target="_blank" rel="noopener noreferrer">Tiago</a></p>
+    </div>
+  </footer>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <!-- <script src="dist/main.umd.min.js"></script> -->
+  <script src="lib/main.js"></script>
+</body>
+</html>

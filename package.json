@@ -1,0 +1,64 @@
+{
+  "name": "js-tdd-course",
+  "version": "1.0.0",
+  "description": "Nossa biblioteca do curso de JS com TDD na prática.",
+  "main": "lib/main.js",
+  "scripts": {
+    "clear": "./node_modules/.bin/rimraf lib",
+    "build": "./node_modules/.bin/babel --watch --out-dir lib src",
+    "clear-build": "npm run clear && npm run build",
+    "build:watch": "npm run clear-build",
+    "build:umd": "./node_modules/.bin/webpack --output-filename main.umd.js",
+    "build:umd:min": "./node_modules/.bin/webpack --output-filename main.umd.min.js -p",
+    "build:all": "npm run clear-build && npm run build:umd && npm run build:umd:min",
+    "lint": "./node_modules/.bin/eslint src/*.js",
+    "prepush": "npm run lint",
+    "test": "./node_modules/.bin/mocha tests/**/*.spec.js --require babel-register",
+    "test:tdd": "./node_modules/.bin/mocha tests/**/*.spec.js --require babel-register --watch",
+    "test:coverage": "nyc npm test"
+  },
+  "nyc": {
+    "reporter": [
+      "text",
+      "html"
+    ],
+    "exclude": [
+      "tests/**"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/willianjusten/js-tdd-course.git"
+  },
+  "keywords": [
+    "js",
+    "tdd",
+    "library"
+  ],
+  "author": "Willian Justen <willianjustenqui@gmail.com> (https://willianjusten.com.br/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/willianjusten/js-tdd-course/issues"
+  },
+  "homepage": "https://github.com/willianjusten/js-tdd-course#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.6.1",
+    "babel-register": "^6.24.0",
+    "chai": "^3.5.0",
+    "eslint": "^4.0.0",
+    "eslint-config-airbnb-base": "^11.2.0",
+    "eslint-plugin-import": "^2.6.1",
+    "husky": "^0.11.9",
+    "mocha": "^3.2.0",
+    "node-fetch": "^2.1.2",
+    "nyc": "^10.2.0",
+    "rimraf": "^2.6.2",
+    "sinon": "^4.5.0",
+    "sinon-chai": "^3.0.0",
+    "sinon-stub-promise": "^4.0.0",
+    "webpack": "^4.5.0",
+    "webpack-cli": "^2.0.14"
+  }
+}
