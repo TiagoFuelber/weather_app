@@ -27,10 +27,15 @@
     </div>
 
     <div class="box-display text-center">
-      <p id="city"></p>
-      <p data-degree="celsius" id="temp"></p>
-      <button id="switchBtn" type="button" class="btn btn-grey">Switch celsius/fahrenheit</button>
-      </br></br>
+      <div id="celsius">
+        <p id="city"></p>
+        <p id="degrees-c"></p>
+        <p class="hidden" id="degrees-f"></p>
+      </div>
+      <button id="switchBtn" type="button" class="btn btn-grey">
+        ºC / ºF
+      </button>
+
       <p id="description"></p>
       <!-- weather Icon -->
       <img id="weather-icon"/>
