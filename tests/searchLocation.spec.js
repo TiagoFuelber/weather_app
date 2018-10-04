@@ -2,7 +2,7 @@ import sinon from 'sinon';
 import sinonChai from 'sinon-chai';
 import sinonStubPromise from 'sinon-stub-promise';
 import chai, { expect } from 'chai';
-import searchLocation from '../lib/searchLocation';
+import searchLocation from '../src/searchLocation';
 
 chai.use(sinonChai);
 sinonStubPromise(sinon);
